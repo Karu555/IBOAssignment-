@@ -38,16 +38,44 @@ function getUniqueProductCount() {
     }
     console.log(obj);
 }
-getUniqueProductCount(listOfProducts);
+getUniqueProductCount();
 
 function getUniquePrducts() {
 
-    const key = 'productName';
+    let result = [];
 
-    const unique = [...new Map(listOfProducts.map(item =>
-        [item[key], item])).values()];
-    console.log(unique);
+    for(let i  = 0  ; i < listOfProducts.length ; i++){
+      let flag = true;
+      for(let j = 0 ; j < result.length ; j++){
+        if(listOfProducts[i].productName === result[j].productName){
+          result[j].quantity = result[j].quantity + listOfProducts[i].quantity;
+          flag = false;
+        }
+      }
+        if(flag === true){
+          result.push(listOfProducts[i]);
+        }
+      }
+      
+    
+      console.log(result);
 }
 
 getUniquePrducts();
+
+// function getUniquePrducts() {
+//     var n = listOfProducts.length;
+//     let newArray = [];
+//     for(var i=0; i<n; i++){
+//         for(var j=i+1; j<n; j++){
+//             if(listOfProducts[i].productName == listOfProducts[j].productName ){
+//                 newArray.push({productName: listOfProducts[i].productName, quantity: listOfProducts[i].quantity, description: listOfProducts[i].description})
+//             }
+//         }
+//     }
+//     console.log(newArray)
+// }
+
+// getUniquePrducts();
+
 
