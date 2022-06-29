@@ -62,20 +62,3 @@ function getUniquePrducts() {
 }
 
 getUniquePrducts();
-
-// function getUniquePrducts() {
-//     var n = listOfProducts.length;
-//     let newArray = [];
-//     for(var i=0; i<n; i++){
-//         for(var j=i+1; j<n; j++){
-//             if(listOfProducts[i].productName == listOfProducts[j].productName ){
-//                 newArray.push({productName: listOfProducts[i].productName, quantity: listOfProducts[i].quantity, description: listOfProducts[i].description})
-//             }
-//         }
-//     }
-//     console.log(newArray)
-// }
-
-// getUniquePrducts();
-
-
